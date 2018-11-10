@@ -1,0 +1,7 @@
+{
+	"port": 8080,
+	"bodyLimit": "100kb",
+	"corsHeaders": ["Link"],
+	"providerUrl":"https://rinkeby.infura.io/",
+	"appLogPath": "./logs/"
+}
