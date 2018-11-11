@@ -4,7 +4,7 @@ export default  {
     body: {
         privateKey: Joi.string().required(),
         destination: Joi.string().required(),
-        amount: Joi.number().required()
+        amount: Joi.string().required()
     }
 }
 

@@ -40,10 +40,10 @@ walletRouter.get('/getBalance/:param', (req, res) => {
  */
 walletRouter.post('/transaction', validate(validation), (req, res) => {
     const {privateKey, destination, amount} = req.body;
-
     web3.eth.accounts.signTransaction({
         to: destination,
-        value: amount
+        gas: 2000000,
+        value: web3.utils.fromWei(amount, 'wei')
     }, privateKey).then((data) => {
         web3.eth.sendSignedTransaction(data.rawTransaction, (error, receipt) => {
             if (error) {
